@@ -3,8 +3,8 @@ USE ipro_db;
 DROP TABLE processes;
 
 CREATE TABLE processes(
-	ID INT NOT NULL AUTO_INCREMENT ,
-	PROCESS_ID INT NOT NULL,
+    ID INT NOT NULL AUTO_INCREMENT ,
+    PROCESS_ID INT NOT NULL,
     SESSION_NAME TEXT,
     SESSION_NUMBER TEXT,
     MEM_USAGE TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE processes(
 );
 
 INSERT INTO processes (PROCESS_ID, SESSION_NAME, SESSION_NUMBER, MEM_USAGE, PROCESS_NAME, TIME_STAMP) VALUES(
-	-- data formatted from .csv file from front-end
+	-- example data, later will need to get data formatted from .csv file from front-end
     500,
     "CONSOLE",
     "1",
