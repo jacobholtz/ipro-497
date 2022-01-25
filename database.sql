@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS ipro_db;
 USE ipro_db;
 DROP TABLE processes;
 
