@@ -12,6 +12,10 @@ except ModuleNotFoundError:
 	print("pyftpdlib not installed. installing...")
 	os.system("pip3 install pyftpdlib")
 
+#check if ftp location is present, if not, create it
+if not os.path.isdir("C:\\Windows\\Temp\\ftp"):
+	os.system("mkdir C:\\Windows\\Temp\\ftp")
+
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
 from pyftpdlib.servers import FTPServer
