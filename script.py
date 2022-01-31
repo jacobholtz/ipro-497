@@ -1,3 +1,4 @@
+#TODO: add database connections and extract data from front-end
 # python3 script to listen for files over ftp and send them to the database
 # tutorial taken from https://pypi.org/project/pyftpdlib/
 import os, sys
