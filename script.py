@@ -31,7 +31,7 @@ authorizer.add_user("user", "password", "C:\\Windows\\Temp\\ftp", perm="elradfmw
 handler = FTPHandler
 handler.authorizer = authorizer
 
-print(len(sys.argv))
+# issues with using localhost or 127.0.0.1 as the ip address and still being able to connect remotely, so instead use an ip address as an argument from the command line, specifically the one from the wifi card 
 server = FTPServer((sys.argv[1], 21), handler)
 
 server.serve_forever()
