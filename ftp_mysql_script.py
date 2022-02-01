@@ -13,7 +13,7 @@ try:
 	print("pyftpdlib installed")
 except ModuleNotFoundError:
 	print("pyftpdlib not installed. installing...")
-	os.system("pip3 install pyftpdlib")
+	os.system("sudo pip3 install pyftpdlib")
 
 #check if ftp location is present, if not, create it
 if not os.path.isdir("/tmp/ftp"):
