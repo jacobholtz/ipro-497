@@ -1,7 +1,10 @@
 # python3 script to listen for files over ftp and send them to the database
 # tutorial taken from https://pypi.org/project/pyftpdlib/
-import os
+import os, sys
 
+if not len(sys.argv) > 1:
+	print("Usage: python3 ftp_mysql_script.py ip_address")
+	quit()
 
 # check to see if pyftpdlib is installed
 try:
@@ -13,18 +16,18 @@ except ModuleNotFoundError:
 	os.system("pip3 install pyftpdlib")
 
 #check if ftp location is present, if not, create it
-if not os.path.isdir("C:\\Windows\\Temp\\ftp"):
-	os.system("mkdir C:\\Windows\\Temp\\ftp")
+if not os.path.isdir("/tmp/ftp"):
+	os.system("/tmp/ftp")
 
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
 from pyftpdlib.servers import FTPServer
 
 authorizer = DummyAuthorizer()
-authorizer.add_user("test", "password", "C:\\Windows\\Temp\\ftp", perm="elradfmwMT") # no idea what perm does atm
+authorizer.add_user("user", "password", "/tmp/ftp", perm="elradfmwMT") # no idea what perm does atm
 
 handler = FTPHandler
 handler.authorizer = authorizer
 
-server = FTPServer(("127.0.0.1", 21), handler)
+server = FTPServer((sys.argv[1], 21), handler)
 server.serve_forever()
