@@ -17,7 +17,7 @@ except ModuleNotFoundError:
 
 #check if ftp location is present, if not, create it
 if not os.path.isdir("/tmp/ftp"):
-	os.system("/tmp/ftp")
+	os.system("mkdir /tmp/ftp")
 
 from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler
