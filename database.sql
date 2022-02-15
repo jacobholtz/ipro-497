@@ -4,31 +4,29 @@ DROP TABLE processes;
 
 CREATE TABLE processes(
     ID INT NOT NULL AUTO_INCREMENT,
-    PROCESS_ID INT NOT NULL,
-    FILE_PATH TEXT,
-    MEM_USAGE INT,
-    CPU_USAGE INT,
-    SESSION_NAME TEXT,
-    OPEN_FILES TEXT,
+    TIME TEXT,
+    MACHINE_ID TEXT,
     PROCESS_NAME TEXT,
-    TIME_STAMP TEXT,
-    UIDS INT,
-    USERNAME TEXT,
+    MEMORY_UTILIZATION INT,
+    CPU_UTILIZATION INT,
+    MEMORY_USED INT,
+    THREADS INT,
+    USER TEXT,
+    PATH TEXT,
     PRIMARY KEY (ID)
 );
 
-INSERT INTO processes (PROCESS_ID, FILE_PATH, MEM_USAGE, CPU_USAGE, SESSION_NAME, OPEN_FILES, PROCESS_NAME, TIME_STAMP, UIDS, USERNAME) VALUES(
-	-- example data, later will need to get data from front-end
-    500,
-    "C:/Windows/System32/virus.exe",
-    75,
-    50,
+
+--example data
+INSERT INTO processes (TIME, MACHINE_ID, PROCESS_NAME, MEMORY_UTILIZATION, CPU_UTILZATION, MEMORY_USED, THREADS, USER, PATH) VALUES(
+    "2022-01-01:12:45:01",
+    "50999",
     "virus.exe",
-    "C:/Users/Brody/Desktop/secret_information.txt, C:/Users/Administrator/Desktop/enterprise_login_information.txt",
-    "virus.exe",
-    "07:40:39 1/31/2022",
-    3,
-    "administrator"
+     99,
+     99,
+     50,
+     "brody",
+     "C:/Users/Brody/Desktop/virus.exe"
 );
 
 SELECT * FROM processes;
