@@ -1,0 +1,22 @@
+TEST CASE 1
+1. login to the mysql server from the command line
+   	mysql -u root -h 50.19.46.146 --password=$ecure_my5ql_p4ssw0rd1!
+
+2. enter the database to be used with
+   	USE ipro_db;
+
+3. try to insert data into the table with
+   	INSERT INTO processes (TIME, MACHINE_ID, PROCESS_NAME, MEMORY_UTILIZATION, CPU_UTILIZATION, MEMORY_USED, THREADS, USER, PATH, PID) VALUES (
+    "2022-02-14 21:02:50.061406",
+    "66351924125566",
+    "System",
+    "0.0018126485636964706",
+    "25.7",
+    "0.151552 MB",
+    234, 
+    "SYSTEM", 
+    "C:\Windows\System32\smss.exe", 
+    520);
+
+4. see if data entry was successful with
+   	SELECT * FROM processes;
