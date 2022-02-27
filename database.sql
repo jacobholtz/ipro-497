@@ -2,8 +2,8 @@ CREATE DATABASE IF NOT EXISTS ipro_db;
 USE ipro_db;
 DROP TABLE processes;
 
-CREATE TABLE pocesses (
- ID int NOT NULL AUTO_INCREMENT,
+CREATE TABLE processes (
+  ID int NOT NULL AUTO_INCREMENT,
   TIME text,
   MACHINE_ID text,
   PROCESS_NAME text,
